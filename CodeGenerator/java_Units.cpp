@@ -1,12 +1,27 @@
 #include "java_Units.h"
 
-java_ClassUnit::java_ClassUnit(const std::string& name) :
-    ClassUnit(name)
+java_ClassUnit::java_ClassUnit(const std::string& name, Flags modifier) :
+    ClassUnit(name, modifier)
 {}
 
 std::string java_ClassUnit::compile(unsigned int level) const
 {
-    std::string result = generateShift(level) + "class " + m_name + " {\n";
+    std::string result = generateShift(level);
+
+    switch (m_modifier)
+    {
+    case ClassUnit::PUBLIC:
+        result += "public ";
+        break;
+    case ClassUnit::PRIVATE:
+        result += "private ";
+        break;
+    case ClassUnit::PROTECTED:
+        result += "pprotected ";
+        break;
+    }
+
+    result += "class " + m_name + " {\n";
 
     for (size_t i = 0; i < ACCESS_MODIFIERS.size(); ++i)
     {

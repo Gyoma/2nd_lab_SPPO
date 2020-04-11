@@ -1,7 +1,7 @@
 #include "cpp_Units.h"
 
-cpp_ClassUnit::cpp_ClassUnit(const std::string& name) :
-    ClassUnit(name)
+cpp_ClassUnit::cpp_ClassUnit(const std::string& name, Flags modifier = ClassUnit::DEFAULT) :
+    ClassUnit(name, ClassUnit::DEFAULT)
 {}
 
 std::string cpp_ClassUnit::compile(unsigned int level) const

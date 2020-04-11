@@ -5,7 +5,7 @@ class cpp_ClassUnit : public ClassUnit
 {
 public:
 
-    explicit cpp_ClassUnit(const std::string& name);
+    explicit cpp_ClassUnit(const std::string& name, Flags modifier);
 
     std::string compile(unsigned int level = 0) const;
 };

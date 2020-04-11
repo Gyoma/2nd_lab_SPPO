@@ -66,10 +66,11 @@ public:
     {
         PUBLIC,
         PROTECTED,
-        PRIVATE
+        PRIVATE,
+        DEFAULT
     };
 
-    explicit ClassUnit(const std::string& name);
+    explicit ClassUnit(const std::string& name, Flags modifier);
     
     virtual ~ClassUnit() = default;
 
@@ -78,6 +79,7 @@ public:
 
 
 protected:
+    Flags m_modifier;
     using Fields = std::vector< std::shared_ptr< Unit > >;
     std::vector< Fields > m_fields;
     static const std::vector< std::string > ACCESS_MODIFIERS;

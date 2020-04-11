@@ -12,7 +12,7 @@ std::string CodeLinker::compile(const CodeGenerator& generator)
 
     std::string class_name = "MyClass";
 
-    std::unique_ptr<ClassUnit> Class(generator.getClassCode(prefix + class_name));
+    std::unique_ptr<ClassUnit> Class(generator.getClassCode(prefix + class_name, ClassUnit::PUBLIC));
 
     Class->add(std::shared_ptr< MethodUnit >(generator.getMethodCode("testFunc1", "void")),
         ClassUnit::PUBLIC);

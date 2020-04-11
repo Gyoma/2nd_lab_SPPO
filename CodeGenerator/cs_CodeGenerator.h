@@ -8,7 +8,7 @@ class cs_CodeGenerator : public CodeGenerator
 public:
     explicit cs_CodeGenerator();
 
-    cs_ClassUnit* getClassCode(std::string name) const;
+    cs_ClassUnit* getClassCode(std::string name, uint32_t modifier = ClassUnit::DEFAULT) const;
 
     cs_MethodUnit* getMethodCode(std::string name, std::string returnType,
         uint32_t flags = MethodUnit::DEFAULT,

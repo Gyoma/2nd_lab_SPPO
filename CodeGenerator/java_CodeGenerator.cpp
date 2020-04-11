@@ -2,9 +2,9 @@
 
 java_CodeGenerator::java_CodeGenerator() {}
 
-inline java_ClassUnit* java_CodeGenerator::getClassCode(std::string name) const
+inline java_ClassUnit* java_CodeGenerator::getClassCode(std::string name, uint32_t modifier) const
 {
-    return new java_ClassUnit(name);
+    return new java_ClassUnit(name, modifier);
 }
 
 inline java_MethodUnit* java_CodeGenerator::getMethodCode(std::string name, std::string returnType,

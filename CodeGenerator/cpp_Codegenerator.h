@@ -9,7 +9,7 @@ public:
 
     explicit cpp_CodeGenerator();
 
-    cpp_ClassUnit* getClassCode(std::string name) const;
+    cpp_ClassUnit* getClassCode(std::string name, uint32_t modifier = ClassUnit::DEFAULT) const;
 
     cpp_MethodUnit* getMethodCode(std::string name, std::string returnType,
         uint32_t flags = MethodUnit::DEFAULT,

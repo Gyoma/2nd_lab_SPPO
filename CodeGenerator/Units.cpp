@@ -21,8 +21,9 @@ std::string Unit::generateShift(unsigned int level) const
     return result;
 }
 
-ClassUnit::ClassUnit(const std::string & name) :
-    Unit(name)
+ClassUnit::ClassUnit(const std::string & name, Flags modifier) :
+    Unit(name),
+    m_modifier(modifier)
 {
     m_fields.resize(ACCESS_MODIFIERS.size());
 }

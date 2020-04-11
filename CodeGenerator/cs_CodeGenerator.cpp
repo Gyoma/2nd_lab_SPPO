@@ -2,9 +2,9 @@
 
 cs_CodeGenerator::cs_CodeGenerator() {}
 
-inline cs_ClassUnit* cs_CodeGenerator::getClassCode(std::string name) const
+inline cs_ClassUnit* cs_CodeGenerator::getClassCode(std::string name, uint32_t modifier) const
 {
-    return new cs_ClassUnit(name);
+    return new cs_ClassUnit(name, modifier);
 }
 
 inline cs_MethodUnit* cs_CodeGenerator::getMethodCode(std::string name, std::string returnType,

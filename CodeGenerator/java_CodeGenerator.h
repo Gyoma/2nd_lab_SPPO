@@ -9,7 +9,7 @@ public:
 
     explicit java_CodeGenerator();
 
-    java_ClassUnit* getClassCode(std::string name) const;
+    java_ClassUnit* getClassCode(std::string name, uint32_t modifier = ClassUnit::DEFAULT) const;
 
     java_MethodUnit* getMethodCode(std::string name, std::string returnType,
         uint32_t flags = MethodUnit::DEFAULT,

@@ -9,7 +9,7 @@ class CodeGenerator
 {
 public:
 
-    virtual ClassUnit* getClassCode(std::string name) const = 0;
+    virtual ClassUnit* getClassCode(std::string name, uint32_t modifier = ClassUnit::DEFAULT) const = 0;
 
     virtual MethodUnit* getMethodCode(std::string name, std::string returnType,
         uint32_t flags = MethodUnit::DEFAULT,
